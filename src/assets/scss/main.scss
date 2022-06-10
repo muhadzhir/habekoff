@@ -1,0 +1,12 @@
+@import "./fonts.scss";
+
+body {
+  margin: 0;
+  font-family: "rsRegular";
+  font-family: "mariupolRegular";
+}
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
