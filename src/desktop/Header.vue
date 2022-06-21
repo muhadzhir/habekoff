@@ -18,12 +18,7 @@
   </div>
 </template>
 <script>
-const headerMenuItems = [
-  { link: {name: 'Home'}, title: 'Главная'} ,
-  { link: {name: 'Production'}, title: 'Продукция'} ,
-  { link: {name: 'OurMission'}, title: 'Наша миссия' },
-  { link: {name: 'Buy'}, title: 'Купить' },
-]
+import { headerMenuItems } from '@/content/variables'
   export default {
     data() {
       return {

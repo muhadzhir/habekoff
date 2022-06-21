@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-img">
-      <img :src="config.img" />
+      <img src="@/assets/img/paper-coffe.png" />
     </div>
     <div class="card-content">{{ finalText }}</div>
   </div>
@@ -16,7 +16,6 @@ export default {
       default: () => {
         return {
           textAnimation: false,
-          img: '',
           text: ''
         }
       }
@@ -37,11 +36,11 @@ export default {
   methods: {
     printAnimation(counter) {
       if (counter > 0) {
-        let delay =  this.textLazy.slice(-2) === ' _' ? 800 : 700
+        let delay =  this.textLazy.slice(-1) === '_' ? 800 : 700
         setTimeout(() => {
-        this.textLazy = this.textLazy.slice(-2) === ' _'
-          ? this.textLazy.slice(0, -2)
-          : `${this.textLazy} _`
+        this.textLazy = this.textLazy.slice(-1) === '_'
+          ? this.textLazy.slice(0, -1)
+          : `${this.textLazy}_`
           this.printAnimation(counter - 1)
         }, delay)
       }
@@ -66,19 +65,19 @@ export default {
 </script>
 <style lang="scss" scoped>
   .card {
-    display: flex;
     height: 300px;
     overflow: hidden;
     align-content: center;
+    margin: 0 20px;
+    margin-bottom: 20px;
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     background: rgb(204, 153, 106);
     border-radius: 20px;
     &-content {
       color: rgb(253, 228, 200);
       display: flex;
-      margin-left: 20px;
-      margin-right: 20px;
-      margin-top: 100px;
+      align-items: center;
+      margin: 0 20px;
     }
     &-img {
       img {

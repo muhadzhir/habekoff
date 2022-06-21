@@ -9,32 +9,41 @@
       </div>
     </div>
     <div class="cards container">
-    <Card :text="aboutUs.slice(0, 50)" />
-    <Card :text="aboutUs.slice(0, 100)" :text-animation="true" />
-    <Card :text="aboutUs.slice(0, 150)" :text-animation="true" />
-    <Card :text="aboutUs.slice(0, 200)" />
+      <div class="w-full grid grid-cols-2 gap-3">
+        <Card
+          v-for="(card, i) in contentCards"
+          :key="i"
+          :config="card"
+        />
+      </div>
     </div>
     <div style="background: rgb(134, 119, 111); padding: 30px 0">
       <div class="container cards">
-        <Little-card :title="'Lorem ipsum'" :text="aboutUs.slice(0, 200)" :img-src="'https://fortecup.ru/netcat_template/template/Fortecup2018/img/coffee-cup.svg'" />
-        <Little-card :title="'Lorem ipsum'" :text="aboutUs.slice(0, 200)" :img-src="'https://fortecup.ru/netcat_template/template/Fortecup2018/img/product.svg'" />
-        <Little-card :title="'Lorem ipsum'" :text="aboutUs.slice(0, 200)" :img-src="'https://fortecup.ru/netcat_template/template/Fortecup2018/img/badge.svg'"  />
+        <div class="w-full grid grid-cols-4 gap-2">
+          <Little-card
+            v-for="(littleCard, i) in contentLittleCards"
+            :key="i"
+            :config="littleCard" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-let aboutUs = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse ultrices gravida dictum fusce ut. Massa massa ultricies mi quis hendrerit dolor magna eget. Blandit cursus risus at ultrices mi tempus. Venenatis lectus magna fringilla urna.'
 
   export default {
     data() {
       return {
-        aboutUs
       }
     }
   }
 </script>
 <style lang="scss">
+  .grid-temp-element {
+    background: rgb(59, 130, 246);
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
   .home-page {
     background: rgb(253, 228, 200);
   }

@@ -8,14 +8,10 @@
 <script>
 import Desktop from '@/desktop/Main.vue'
 import Mobile from '@/mobile/Main.vue'
+import breakPoints from '@/mixin/break-points'
 export default {
   name: 'App',
-  data() {
-    return {
-      isDesktop: document.documentElement.clientWidth > 768,
-      isMobile: document.documentElement.clientWidth < 768
-    }
-  },
+  mixins: [breakPoints],
   components: {Desktop, Mobile}
 }
 </script>
